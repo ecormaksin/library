@@ -1,0 +1,1364 @@
+<html lang="ja">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="./assets/style.css" rel="stylesheet">
+    <script src="./assets/marked.min.js"></script>
+    <link rel="icon" href="./assets/favicon.ico">
+    <title>domain-schema</title>
+</head>
+<body class="treeMenuAndMain">
+
+<nav class="tree">
+    <div>
+        <a href="./index.html">=> INDEX</a>
+    </div>
+    <details open>
+        <summary class="package">
+            <a href="#library.domain">ビジネスルール</a>
+        </summary>
+        <div>
+            <details open>
+        <summary class="package">
+            <a href="#library.domain.type">ビジネスルールを表現する基本型</a>
+        </summary>
+        <div>
+            <a href="#library.domain.type.date.CurrentDate">現在日</a><br><a href="#library.domain.type.date.Days">日数</a><br><a href="#library.domain.type.date.Months">月数</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model">ビジネスルールを表現する複合型</a>
+        </summary>
+        <div>
+            <details open>
+        <summary class="package">
+            <a href="#library.domain.model.retention">取置</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.retention.ExpireDate">取置期限</a><br><a href="#library.domain.model.retention.MaterialMatching">所蔵品と本の照合結果</a><br><a href="#library.domain.model.retention.Retained">取置資料</a><br><a href="#library.domain.model.retention.RetainedDate">取置日</a><br><a href="#library.domain.model.retention.RetainedList">準備完了の一覧</a><br><a href="#library.domain.model.retention.Retention">取置依頼</a><br><a href="#library.domain.model.retention.RetentionNumber">取置番号</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.material">所蔵品目と所蔵品</a>
+        </summary>
+        <div>
+            <details open>
+        <summary class="package">
+            <a href="#library.domain.model.material.item">所蔵品</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.material.item.Item">*所蔵品</a><br><a href="#library.domain.model.material.item.ItemLoanability">所蔵品の貸出可否</a><br><a href="#library.domain.model.material.item.ItemNumber">所蔵品番号</a><br><a href="#library.domain.model.material.item.ItemStatus">所蔵品の状態</a><br><a href="#library.domain.model.material.item.ItemWithStatus">所蔵品とその状態</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.material.entry">所蔵品目</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.material.entry.Entries">所蔵品目のリスト</a><br><a href="#library.domain.model.material.entry.Entry">所蔵品目</a><br><a href="#library.domain.model.material.entry.EntryNumber">所蔵品目番号</a><br><a href="#library.domain.model.material.entry.EntryNumbers">資料番号のリスト</a><br><a href="#library.domain.model.material.entry.EntryType">所蔵品目種別</a><br><a href="#library.domain.model.material.entry.Keyword">検索キーワード</a><br><a href="#library.domain.model.material.entry.NumberOfEntry">所蔵品目の点数</a><br><a href="#library.domain.model.material.entry.Title">所蔵品目の題名</a><br><a href="#library.domain.model.material.entry.WorkOf">著者・アーティスト</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.material.instock">在庫有無</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.material.instock.EntryInStock">所蔵品目と在庫数</a><br><a href="#library.domain.model.material.instock.EntryInStockList">本と在庫数の一覧</a><br><a href="#library.domain.model.material.instock.InStock">在庫有無</a><br><a href="#library.domain.model.material.instock.StockQuantity">在庫数</a><br>
+        </div>
+    </details>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.reservation">予約</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.reservation.NumberOfReservation">予約の件数</a><br><a href="#library.domain.model.reservation.Reservation">*貸出予約</a><br><a href="#library.domain.model.reservation.ReservationNumber">予約番号</a><br><a href="#library.domain.model.reservation.ReservationStatus">予約の状態</a><br><a href="#library.domain.model.reservation.Reservations">貸出予約リスト</a><br><a href="#library.domain.model.reservation.ReservedMaterial">予約図書</a><br><details open>
+        <summary class="package">
+            <a href="#library.domain.model.reservation.request">依頼</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.reservation.request.ReservationRequest">予約依頼</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.reservation.availability">予約可否</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.reservation.availability.ReservationAvailability">予約可否</a><br><a href="#library.domain.model.reservation.availability.RetentionAvailability">取置可否</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.reservation.wait">待ち順番</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.reservation.wait.ReservationWithWaitingOrder">貸出予約と待ち順番</a><br><a href="#library.domain.model.reservation.wait.ReservationWithWaitingOrderList">待ち順番と貸出予約リスト</a><br><a href="#library.domain.model.reservation.wait.WaitingOrder">待ち順番</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.reservation.rule">予約ルール</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.reservation.rule.ReservationRestriction">予約制限</a><br><a href="#library.domain.model.reservation.rule.RestrictionOfReservationQuantity">予約制限</a><br>
+        </div>
+    </details>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.delay">遅延</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.delay.DaysPeriod">遅延期間</a><br><a href="#library.domain.model.delay.DaysPeriods">遅延期間のリスト</a><br><a href="#library.domain.model.delay.DelayStatus">遅延状態</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.loan">貸出</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.loan.Loan">*貸出</a><br><a href="#library.domain.model.loan.LoanDate">貸出日</a><br><a href="#library.domain.model.loan.LoanNumber">貸出番号</a><br><a href="#library.domain.model.loan.LoanRequest">貸出依頼</a><br><a href="#library.domain.model.loan.Loans">貸出のリスト</a><br><a href="#library.domain.model.loan.NumberOfLoans">貸出点数</a><br><details open>
+        <summary class="package">
+            <a href="#library.domain.model.loan.rule">貸出ルール</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.loan.rule.LoanStatus">貸出状況</a><br><a href="#library.domain.model.loan.rule.Loanability">貸出可否</a><br><a href="#library.domain.model.loan.rule.Restriction">*貸出制限</a><br><a href="#library.domain.model.loan.rule.RestrictionOfDelay">*遅延状態による制限(判定結果)</a><br><a href="#library.domain.model.loan.rule.RestrictionOfDelayMap">*遅延状態による貸出制限の表条件</a><br><a href="#library.domain.model.loan.rule.RestrictionOfQuantity">*貸出点数の制限</a><br><a href="#library.domain.model.loan.rule.RestrictionOfQuantityMap">*貸出冊数制限の表条件</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.loan.due">期限</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.loan.due.DueDate">貸出期限日</a><br><a href="#library.domain.model.loan.due.DueDateStatus">*貸出期限状態</a><br><a href="#library.domain.model.loan.due.Dues">貸出期限のリスト</a><br>
+        </div>
+    </details>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.member">会員</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.member.Member">会員</a><br><a href="#library.domain.model.member.MemberNumber">会員番号</a><br><a href="#library.domain.model.member.MemberStatus">会員登録の状態</a><br><a href="#library.domain.model.member.MemberType">会員種別</a><br><a href="#library.domain.model.member.Name">名前</a><br>
+        </div>
+    </details><details open>
+        <summary class="package">
+            <a href="#library.domain.model.returned">返却</a>
+        </summary>
+        <div>
+            <a href="#library.domain.model.returned.ReturnDate">返却日</a><br><a href="#library.domain.model.returned.Returned">返却</a><br><a href="#library.domain.model.returned.Returns">返却一覧</a><br>
+        </div>
+    </details>
+        </div>
+    </details>
+        </div>
+    </details>
+</nav>
+
+<main>
+    <h1>domain-schema</h1>
+
+    <section class="type schema">
+            <h2><a name="library.domain.model.delay.DaysPeriod">遅延期間</a></h2>
+            <div class="fully-qualified-name">library.domain.model.delay.DaysPeriod</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>months</b>
+                    :
+                    <a href="./domain.html#library.domain.type.date.Months">月数</a>
+                
+                    <b>days</b>
+                    :
+                    <a href="./domain.html#library.domain.type.date.Days">日数</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.delay.DaysPeriods">遅延期間のリスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.delay.DaysPeriods</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>lists</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.delay.DelayStatus">遅延状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.delay.DelayStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.Loan">*貸出</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.Loan</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>loanNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.LoanNumber">貸出番号</a>
+                
+                    <b>member</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>item</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.Item">*所蔵品</a>
+                
+                    <b>loanDate</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.LoanDate">貸出日</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.LoanDate">貸出日</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.LoanDate</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.LoanNumber">貸出番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.LoanNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.LoanRequest">貸出依頼</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.LoanRequest</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>memberNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.MemberNumber">会員番号</a>
+                
+                    <b>itemNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.ItemNumber">所蔵品番号</a>
+                
+                    <b>loanDate</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.LoanDate">貸出日</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.Loans">貸出のリスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.Loans</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.NumberOfLoans">貸出点数</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.NumberOfLoans</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.due.DueDate">貸出期限日</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.due.DueDate</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.due.DueDateStatus">*貸出期限状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.due.DueDateStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.due.Dues">貸出期限のリスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.due.Dues</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>loans</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.Loans">貸出のリスト</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.LoanStatus">貸出状況</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.LoanStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>member</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>loans</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.Loans">貸出のリスト</a>
+                
+                    <b>date</b>
+                    :
+                    <a href="./domain.html#library.domain.type.date.CurrentDate">現在日</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.Loanability">貸出可否</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.Loanability</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>message</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.Restriction">*貸出制限</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.Restriction</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>会員</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>貸出リスト</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.Loans">貸出のリスト</a>
+                
+                    <b>借りたい所蔵品</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.Item">*所蔵品</a>
+                
+                    <b>遅延状態</b>
+                    :
+                    <a href="./domain.html#library.domain.model.delay.DelayStatus">遅延状態</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.RestrictionOfDelay">*遅延状態による制限(判定結果)</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.RestrictionOfDelay</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.RestrictionOfDelayMap">*遅延状態による貸出制限の表条件</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.RestrictionOfDelayMap</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>map</b>
+                    :
+                    <a href="./domain.html#java.util.Map">Map</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.RestrictionOfQuantity">*貸出点数の制限</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.RestrictionOfQuantity</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>書籍の貸出冊数上限</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.NumberOfLoans">貸出点数</a>
+                
+                    <b>視聴覚資料の貸出点数上限</b>
+                    :
+                    <a href="./domain.html#library.domain.model.loan.NumberOfLoans">貸出点数</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.loan.rule.RestrictionOfQuantityMap">*貸出冊数制限の表条件</a></h2>
+            <div class="fully-qualified-name">library.domain.model.loan.rule.RestrictionOfQuantityMap</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>map</b>
+                    :
+                    <a href="./domain.html#java.util.Map">Map</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.Entries">所蔵品目のリスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.Entries</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.Entry">所蔵品目</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.Entry</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>entryNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.EntryNumber">所蔵品目番号</a>
+                
+                    <b>title</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.Title">所蔵品目の題名</a>
+                
+                    <b>workOf</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.WorkOf">著者・アーティスト</a>
+                
+                    <b>entryType</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.EntryType">所蔵品目種別</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.EntryNumber">所蔵品目番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.EntryNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.EntryNumbers">資料番号のリスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.EntryNumbers</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.EntryType">所蔵品目種別</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.EntryType</div>
+
+            
+                <section class="markdown">
+図書と視聴覚資料(DVD等)ごとに貸出可能数が異なる</section>
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.Keyword">検索キーワード</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.Keyword</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.NumberOfEntry">所蔵品目の点数</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.NumberOfEntry</div>
+
+            
+                <section class="markdown">(所蔵品目の種類の数)</section>
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.Title">所蔵品目の題名</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.Title</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.entry.WorkOf">著者・アーティスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.entry.WorkOf</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.instock.EntryInStock">所蔵品目と在庫数</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.instock.EntryInStock</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>entry</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.Entry">所蔵品目</a>
+                
+                    <b>在庫数</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.instock.StockQuantity">在庫数</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.instock.EntryInStockList">本と在庫数の一覧</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.instock.EntryInStockList</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.instock.InStock">在庫有無</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.instock.InStock</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>表記</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.instock.StockQuantity">在庫数</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.instock.StockQuantity</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.item.Item">*所蔵品</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.item.Item</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>itemNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.ItemNumber">所蔵品番号</a>
+                
+                    <b>entry</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.Entry">所蔵品目</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.item.ItemLoanability">所蔵品の貸出可否</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.item.ItemLoanability</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>message</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.item.ItemNumber">所蔵品番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.item.ItemNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.item.ItemStatus">所蔵品の状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.item.ItemStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>description</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.material.item.ItemWithStatus">所蔵品とその状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.material.item.ItemWithStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>item</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.Item">*所蔵品</a>
+                
+                    <b>status</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.ItemStatus">所蔵品の状態</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.member.Member">会員</a></h2>
+            <div class="fully-qualified-name">library.domain.model.member.Member</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>memberNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.MemberNumber">会員番号</a>
+                
+                    <b>name</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Name">名前</a>
+                
+                    <b>memberType</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.MemberType">会員種別</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.member.MemberNumber">会員番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.member.MemberNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.Integer">Integer</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.member.MemberStatus">会員登録の状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.member.MemberStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.member.MemberType">会員種別</a></h2>
+            <div class="fully-qualified-name">library.domain.model.member.MemberType</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.member.Name">名前</a></h2>
+            <div class="fully-qualified-name">library.domain.model.member.Name</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.NumberOfReservation">予約の件数</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.NumberOfReservation</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.Reservation">*貸出予約</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.Reservation</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>reservationNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.ReservationNumber">予約番号</a>
+                
+                    <b>member</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>entry</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.Entry">所蔵品目</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.ReservationNumber">予約番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.ReservationNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.ReservationStatus">予約の状態</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.ReservationStatus</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>description</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.Reservations">貸出予約リスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.Reservations</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.ReservedMaterial">予約図書</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.ReservedMaterial</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>entry</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.Entry">所蔵品目</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.availability.ReservationAvailability">予約可否</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.availability.ReservationAvailability</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>message</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.availability.RetentionAvailability">取置可否</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.availability.RetentionAvailability</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.request.ReservationRequest">予約依頼</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.request.ReservationRequest</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>memberNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.MemberNumber">会員番号</a>
+                
+                    <b>entryNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.entry.EntryNumber">所蔵品目番号</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.rule.ReservationRestriction">予約制限</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.rule.ReservationRestriction</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>member</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>reservations</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.Reservations">貸出予約リスト</a>
+                
+                    <b>予約可能冊数上限</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.NumberOfReservation">予約の件数</a>
+                
+                    <b>視聴覚資料の予約可能冊数上限</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.NumberOfReservation">予約の件数</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.rule.RestrictionOfReservationQuantity">予約制限</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.rule.RestrictionOfReservationQuantity</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.wait.ReservationWithWaitingOrder">貸出予約と待ち順番</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.wait.ReservationWithWaitingOrder</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>reservation</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.Reservation">*貸出予約</a>
+                
+                    <b>entryInStock</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.instock.EntryInStock">所蔵品目と在庫数</a>
+                
+                    <b>待ち順番</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.wait.WaitingOrder">待ち順番</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.wait.ReservationWithWaitingOrderList">待ち順番と貸出予約リスト</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.wait.ReservationWithWaitingOrderList</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.reservation.wait.WaitingOrder">待ち順番</a></h2>
+            <div class="fully-qualified-name">library.domain.model.reservation.wait.WaitingOrder</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.ExpireDate">取置期限</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.ExpireDate</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.MaterialMatching">所蔵品と本の照合結果</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.MaterialMatching</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>description</b>
+                    :
+                    <a href="./domain.html#java.lang.String">String</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.Retained">取置資料</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.Retained</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>retentionNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.retention.RetentionNumber">取置番号</a>
+                
+                    <b>member</b>
+                    :
+                    <a href="./domain.html#library.domain.model.member.Member">会員</a>
+                
+                    <b>item</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.Item">*所蔵品</a>
+                
+                    <b>retainedDate</b>
+                    :
+                    <a href="./domain.html#library.domain.model.retention.RetainedDate">取置日</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.RetainedDate">取置日</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.RetainedDate</div>
+
+            
+                <section class="markdown">RDRAのバリエーション図では貸出準備完了日</section>
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.RetainedList">準備完了の一覧</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.RetainedList</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.Retention">取置依頼</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.Retention</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>reservationNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.reservation.ReservationNumber">予約番号</a>
+                
+                    <b>itemNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.ItemNumber">所蔵品番号</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.retention.RetentionNumber">取置番号</a></h2>
+            <div class="fully-qualified-name">library.domain.model.retention.RetentionNumber</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.returned.ReturnDate">返却日</a></h2>
+            <div class="fully-qualified-name">library.domain.model.returned.ReturnDate</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.returned.Returned">返却</a></h2>
+            <div class="fully-qualified-name">library.domain.model.returned.Returned</div>
+
+            
+                <section class="markdown">（イベント）</section>
+            
+
+            <div class="component">
+                
+                    <b>itemNumber</b>
+                    :
+                    <a href="./domain.html#library.domain.model.material.item.ItemNumber">所蔵品番号</a>
+                
+                    <b>returnDate</b>
+                    :
+                    <a href="./domain.html#library.domain.model.returned.ReturnDate">返却日</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.model.returned.Returns">返却一覧</a></h2>
+            <div class="fully-qualified-name">library.domain.model.returned.Returns</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>list</b>
+                    :
+                    <a href="./domain.html#java.util.List">List</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.type.date.CurrentDate">現在日</a></h2>
+            <div class="fully-qualified-name">library.domain.type.date.CurrentDate</div>
+
+            
+                <section class="markdown">（状態の時点を表現するクラス）</section>
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#java.time.LocalDate">LocalDate</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.type.date.Days">日数</a></h2>
+            <div class="fully-qualified-name">library.domain.type.date.Days</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section><section class="type schema">
+            <h2><a name="library.domain.type.date.Months">月数</a></h2>
+            <div class="fully-qualified-name">library.domain.type.date.Months</div>
+
+            
+                
+            
+
+            <div class="component">
+                
+                    <b>value</b>
+                    :
+                    <a href="./domain.html#int">int</a>
+                
+                hoge
+            </div>
+        </section>
+</main>
+
+<script src="./assets/jig.js"></script>
+</body>
+</html>
